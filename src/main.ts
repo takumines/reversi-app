@@ -7,6 +7,7 @@ const PORT = 3000
 const app = express()
 
 app.use(morgan("dev"))
+app.use(express.static("static", { extensions: ["html"] }))
 
 const errorHandler = (err: Error, _req: Request, res: Response, _next: express.NextFunction) => {
 	console.error("Unexpected error", err)
