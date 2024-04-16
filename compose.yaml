@@ -6,10 +6,10 @@ services:
     image: mysql:8.0.29
     platform: linux/arm64
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: reversi
-      MYSQL_USER: user
-      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
     ports:
       - "3306:3306"
     volumes:
